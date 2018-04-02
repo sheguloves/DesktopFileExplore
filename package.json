@@ -1,0 +1,29 @@
+{
+  "name": "desktopfileexplore",
+  "version": "1.0.0",
+  "description": "This project is based on Electron",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sheguloves/DesktopFileExplore.git"
+  },
+  "keywords": [
+    "Electron",
+    "Node.js",
+    "Vue.js"
+  ],
+  "author": "Felix Xi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sheguloves/DesktopFileExplore/issues"
+  },
+  "homepage": "https://github.com/sheguloves/DesktopFileExplore#readme",
+  "devDependencies": {
+    "electron": "^1.8.4",
+    "electron-packager": "^11.2.0"
+  }
+}
