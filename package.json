@@ -5,6 +5,12 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
+    "build": "node .scripts/build.js",
+    "build:darwin": "cross-env BUILD_TARGET=darwin node .scripts/build.js",
+    "build:linux": "cross-env BUILD_TARGET=linux node .scripts/build.js",
+    "build:mas": "cross-env BUILD_TARGET=mas node .scripts/build.js",
+    "build:win32": "cross-env BUILD_TARGET=win32 node .scripts/build.js",
+    "build:clean": "cross-env BUILD_TARGET=clean node .scripts/build.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,7 +29,14 @@
   },
   "homepage": "https://github.com/sheguloves/DesktopFileExplore#readme",
   "devDependencies": {
+    "babel-loader": "^7.1.4",
+    "babili-webpack-plugin": "^0.1.2",
+    "chalk": "^2.3.2",
+    "cross-env": "^5.1.4",
+    "del": "^3.0.0",
     "electron": "^1.8.4",
-    "electron-packager": "^11.2.0"
+    "electron-packager": "^11.2.0",
+    "multispinner": "^0.2.1",
+    "webpack": "^4.4.1"
   }
 }
