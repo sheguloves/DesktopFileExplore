@@ -2,21 +2,24 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <title>Hello World!</title>
+    <meta charset="utf-8">
+    <title>carrepair</title>
+    <% if (htmlWebpackPlugin.options.nodeModules) { %>
+        <!-- Add `node_modules/` to global paths so `require` works properly in development -->
+        <script>
+        require('module').globalPaths.push('<%= htmlWebpackPlugin.options.nodeModules.replace(/\\/g, '\\\\
+            ') %>')
+        </script>
+        <% } %>
 </head>
 
 <body>
-    <h1>Hello World!</h1> We are using node
+    <div id="app"></div>
+    <!-- Set `__static` path to static files in production -->
     <script>
-    document.write(process.versions.node)
-    </script>, Chrome
-    <script>
-    document.write(process.versions.chrome)
-    </script>, and Electron
-    <script>
-    document.write(process.versions.electron)
-    </script>.
+    if (process.env.NODE_ENV !== 'development') window.__static = require('path').join(__dirname, '/static').replace(/\\/g, '\\\\')
+    </script>
+    <!-- webpack builds are automatically injected -->
 </body>
 
 </html>
